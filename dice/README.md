@@ -1,4 +1,4 @@
-DICE GAME- eosluckydice
+DICE GAME
 -----------------
 
 Example game session using cleos
@@ -9,6 +9,7 @@ Example game session using cleos
 * Please use following accounts to play bet
 
 ilovebet123 -  5JXZVqbaH9eNAHH8cNErrgL4dQJcduXQkmfrmaGe55YfCXL212G
+eosluckydice
 
 * Endpoint network:
 
