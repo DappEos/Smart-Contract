@@ -187,7 +187,7 @@ class dice : public eosio::contract {
       _code = code;
     }
 
-    //@abi table activebets
+    //@abi table activebet1s
     //@abi table highbets
     //@abi table largebets
     struct bet
@@ -205,9 +205,10 @@ class dice : public eosio::contract {
       checksum256 seed;
       eosio::time_point_sec time;
       uint64_t primary_key() const { return id; };
+      uint64_t get_bettor() const { return bettor; }
       EOSLIB_SERIALIZE(bet, (id)(bet_id)(contract)(bettor)(inviter)(bet_amt)(payout)(roll_type)(roll_border)(roll_value)(seed)(time));
     };
-    typedef eosio::multi_index<N(activebets), bet> bet_index;
+    typedef eosio::multi_index<N(activebets), bet, eosio::indexed_by<N(by_bettor), eosio::const_mem_fun<bet, uint64_t, &bet::get_bettor>>> bet_index;
     bet_index _bets;
 
     typedef eosio::multi_index<N(highbets), bet> high_odds_index;

@@ -135,3 +135,30 @@ cleos -u http://jungle2.cryptolions.io:80 get table dicedicedice dicedicedice ac
 }
 
 ````
+##### Get table by secondary index
+
+````
+cleos -u http://jungle2.cryptolions.io:80 get table dicedicedice dicedicedice activebet1s --upper "ihavedice123" --lower "ihavedice123" --index 2 --key-type i64
+
+{
+  "rows": [{
+      "id": 21,
+      "bet_id": 61,
+      "contract": "eosio.token",
+      "bettor": "ihavedice123",
+      "inviter": "diceinviters",
+      "bet_amt": 10000,
+      "payout": [
+        "1.2405 EOS"
+      ],
+      "roll_type": 1,
+      "roll_border": 79,
+      "roll_value": 78,
+      "seed": "a0b7ef0f3263bc7bfeef6de8213ebb0760f496fc8db7a3e550803e3f49e2a92d",
+      "time": "2018-12-18T09:07:23"
+    }
+  ],
+  "more": false
+}
+
+````
